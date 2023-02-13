@@ -1,0 +1,107 @@
+
+from turtle import speed
+from ursina import *
+from ursina.prefabs.first_person_controller import FirstPersonController
+from random import uniform
+
+app = Ursina()
+Sky()
+
+ground = Entity(model='plane', texture='grass', collider='mesh', scale=(500,1,500))
+player = FirstPersonController(position=(0,2,-5))
+player.speed = 30
+
+weapon = Entity(model='Assets\scifi_shotty.obj', parent=camera.ui, scale=1, color=color.gold, texture='white_cube', position=(0.8, -0.6))
+
+
+
+enemies = []
+objects = []
+
+for i in range(4):
+    enemy= FrameAnimation3d('monke_animation/dk', color=color.black, fps=10, scale=1, position=(uniform(-45,45),1,uniform(33,45)))
+    enObject = Entity(model=r'monke_animation\dk_1.obj', collider='box', parent=enemies,scale=1, position=(0,30,0))
+    
+    enemy.look_at(player)
+    
+    enemies.append(enemy)
+    objects.append(enObject)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def update():
+    
+    
+    for ev in enemies:
+        dist = distance(enemy, player)
+        dastardly = ev.add_script(SmoothFollow(target=player, speed=.05))
+        
+
+        if dist > 8:
+            ev.resume()
+            enemy.enable()
+            
+            
+            
+            
+
+            
+            
+
+            print(ev.position)
+
+        else:
+            ev.pause()
+            enemy.disable()
+            
+            
+            print('paused')
+        
+
+
+    # does a weird side to side motion, mirrors players left and right movement 
+    # if player.y < -5:
+    #     player.y = 2
+    # for evil in enemies:
+    #     sfe = evil.add_script(SmoothFollow(target=player, offset=(3,0,0), speed=1))
+        
+
+        
+        
+    #     print(evil.world_position)
+    #     dist = distance(evil, player)
+    #     if dist > 8: # if enemy is distance is greater than 5
+    #         evil.resume()
+
+                
+    #             # diff_x = player.x - evil.x
+    #             # diff_z = player.z - evil.z
+    #             # evil.x += 2*time.dt*diff_x*abs(diff_x)
+    #             # evil.z += 4*time.dt*diff_z/abs(diff_z)
+                
+            
+                    
+    #     else:
+    #         evil.pause()
+    #         print("enemy is stopped")
+
+
+
+
+
+
+
+
+app.run()

@@ -1,0 +1,258 @@
+/*             CSS Reset                    */
+
+/* 
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+/*                   Colors
+primary: #d32f2f ;
+secondary: #ff8f00;
+primary-light: #ff6659;
+primary-dark: #9a0007;
+secondary-light: #ffc046;
+secondary-dark: #c56000;
+dark-text: #fafafa;
+light-text: #212121;
+*/
+
+
+
+/*                    Fonts 
+headig font: font-family: 'IBM Plex Sans', sans-serif;
+body font: font-family:, sans-serif;
+font-family: 'IBM Plex Serif', serif;
+font-family: 'Roboto', sans-serif;
+additional fonts for texts: font-family: 'Ubuntu', sans-serif;
+
+
+
+*/
+
+
+/*                     Text                   */
+h1, h2, h3, h4, h5, h6{
+	font-family: 'IBM Plex Sans', sans-serif;
+	color: #0D0000;
+	
+	line-height: 2;
+}
+h1{
+	text-align: center;
+	font-size: 2em;
+	font-weight: 500;
+	color: #0D0000;
+}
+h2{
+	font-size: 2.5em;
+	margin-left: -10px;
+	font-weight: 500;
+	color: #222601;
+	text-align: center;
+}
+h3{
+	font-size: 2em;
+	font-weight: 500;
+	color: #0D0000;
+}
+h4{
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #fafafa;
+}
+h5{
+	font-size: 1em;
+	font-style: italic;
+	color: #fafafa;
+}
+h6{
+	font-size: 1em;
+	font-style: italic;
+	color: #fafafa;
+}
+
+p{
+	font-family: 'IBM Plex Serif', serif;
+	font-size: 1.5em;
+	line-height: 1.5;
+	color: #000000;
+	padding: 5px;
+}
+
+
+
+
+/*                     page elements           */
+body{
+	background: rgb(232,28,16);
+	background: linear-gradient(90deg, rgba(232,28,16,1) 22%, rgba(255,113,0,1) 39%, rgba(121,9,9,1) 60%, rgba(246,230,23,1) 79%, rgba(184,5,88,1) 98%);	
+	background-repeat:repeat-y;
+}
+nav{
+	text-align: center;
+	padding: 30px;
+	line-height: 4;
+}
+nav a{
+	text-decoration: none;
+	border: 4px solid #ffc046;
+	border-radius: 5px;
+	padding: 10px 40px;
+	margin-left: 40px;
+	color: #6666ff ;
+	background-color: #ff8f00;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: bolder;
+	font-size: 1.30em;
+}
+
+
+
+
+
+
+
+/*                    layout                     */
+.container{
+	width: 85%;
+	max-width: 1200px;
+	margin: 10px auto;
+	background-color: #ffc046;
+	min-height: 100px;
+	overflow: auto;
+}
+img{
+	display: block;
+	margin: 10px auto;
+}
+figcaption{
+	text-align: center;
+	color: #fafafa;
+	
+}
+main{
+	margin-bottom: 20px;
+	-moz-column-count: 3;
+	-moz-column-gap: 5px;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 5px;
+	column-count: 3;
+	column-gap: 15px;
+	min-width: 100px;
+	box-sizing: border-box;
+
+}
+
+aside{
+	float: right;
+	display: block;
+	border: 2px solid #000000;
+	width: 25%;
+	padding: 10px;
+	box-sizing: border-box;
+	min-height: 600px;
+	margin-top: 65px;
+	
+}
+aside h1, aside h2{
+	text-align: center;
+	color: #fafafa;
+
+
+}
+footer{
+	clear: both;
+	text-align: center;
+	margin-top: 15px;
+	border-top: 5px solid #000000;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1cm;
+	padding: 25px;
+	box-sizing: border-box;
+}
+
+.card{
+	width: 30%;
+	min-height: 500px;
+	box-sizing: border-box;
+	outline: 3px solid #c56000;
+	float: left;
+	padding: 5px;
+	margin: 5px 1.5%;
+	-webkit-box-shadow: 2px 2px 1px 1px #ffc046;
+	box-shadow: 2px 2px 1px 1px #ffc046;
+	border-radius: 10px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+
+}
+.card p{
+	font-size: 2em;
+	line-height: 1.5;
+	padding: 5px;
+	
+}
+.card img{
+	width: 80%;
+	display: block;
+	margin: 5px auto;
+}
+.card figure{
+	padding: 2%;
+	min-height: 100px;
+	outline: 1px solid #FF4D0D;
+	outline-offset: 1px;
+	overflow: auto;
+}
